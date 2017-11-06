@@ -1,0 +1,26 @@
+runtime: python
+env: flex
+entrypoint: gunicorn -b :$PORT tdf.wsgi
+
+beta_settings:
+    cloud_sql_instances: test-django-flex:southamerica-east1:test-django-flex
+
+runtime_config:
+  python_version: 3
+
+# env_variables:
+#   DB_NAME: 'testdjangoflex'
+#   DB_USERNAME: 'postgres'
+#   DB_PASSWORD: 'password'
+#   DB_HOST: '/cloudsql/test-django-flex:southamerica-east1:test-django-flex'
+
+skip_files:
+- manage.py
+- (.*)\.pyc
+- (.*)\.db
+- (.*)\-info
+- README.md
+- TODO.md
+- .gitignore
+- .DS_Store
+- env/.*$
