@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'subcategories.apps.SubcategoriesConfig',
     'products.apps.ProductsConfig',
     'services.apps.ServicesConfig',
+    'graphene_django',
 ]
 
 MIDDLEWARE = [
@@ -144,3 +145,7 @@ else:
     STATIC_URL = '/static/'
 
 STATIC_ROOT = 'static/'
+
+GRAPHENE = {
+    'SCHEMA': 'tdf.schema.schema'
+}
